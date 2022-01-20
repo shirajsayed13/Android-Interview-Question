@@ -1,0 +1,1114 @@
+[
+  {
+    "id": 1,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Application"
+    ],
+    "question": "What is Application",
+    "answer": "The Application class in Android is the base class within an Android app that contains all other components such as activities and services. The Application class, or any subclass of the Application class, is instantiated before any other class when the process for your application/package is created."
+  },
+  {
+    "id": 2,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Context"
+    ],
+    "question": "What is Context",
+    "answer": "A Context is a handle to the system; it provides services like resolving resources, obtaining access to databases and preferences, and so on. An Android app has activities. Context is like a handle to the environment your application is currently running in. Application Context: This context is tied to the lifecycle of an application. The application context can be used where you need a context whose lifecycle is separate from the current context or when you are passing a context beyond the scope of an activity. Activity Context: This context is available in an activity. This context is tied to the lifecycle of an activity. The activity context should be used when you are passing the context in the scope of an activity or you need the context whose lifecycle is attached to the current context."
+  },
+  {
+    "id": 3,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "DVM"
+    ],
+    "question": "Why bytecode cannot be run in Android",
+    "answer": "Android uses DVM (Dalvik Virtual Machine ) rather using JVM(Java Virtual Machine)."
+  },
+  {
+    "id": 4,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "BuildType",
+      "Gradle"
+    ],
+    "question": "What is a BuildType in Gradle? And what can you use it for",
+    "answer": "Build types define properties that Gradle uses when building and packaging your Android app. A build type defines how a module is built, for example whether ProGuard is run. A product flavour defines what is built, such as which resources are included in the build. Gradle creates a build variant for every possible combination of your project's product flavours and build types."
+  },
+  {
+    "id": 5,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "BuildProcess"
+    ],
+    "question": "Explain the build process in Android",
+    "answer": "First step involves compiling the resources folder (/res) using the aapt (android asset packaging tool) tool. These are compiled to a single class file called R.java. This is a class that just contains constants. Second step involves the java source code being compiled to .class files by javac, and then the class files are converted to Dalvik bytecode by the dx tool, which is included in the sdk 'tools'. The output is classes.dex. The final step involves the android apkbuilder which takes all the input and builds the apk (android packaging key) file."
+  },
+  {
+    "id": 6,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Architecture"
+    ],
+    "question": "What is the Android Application Architecture",
+    "answer": "Android application architecture has the following components: Services − It will perform background functionalities Intent − It will perform the inter connection between activities and the data passing mechanism Resource Externalization − strings and graphics Notification − light, sound, icon, notification, dialog box and toast Content Providers − It will share the data between applications"
+  },
+  {
+    "id": 7,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Activity"
+    ],
+    "question": "Describe activities",
+    "answer": "Activities are basically containers or windows to the user interface."
+  },
+  {
+    "id": 8,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "LaunchModes"
+    ],
+    "question": "Launch modes in Android",
+    "answer": "Standard: It creates a new instance of an activity in the task from which it was started. Multiple instances of the activity can be created and multiple instances can be added to the same or different tasks. Eg: Suppose there is an activity stack of A -> B -> C. Now if we launch B again with the launch mode as \"standard\", the new stack will be A -> B -> C -> B. SingleTop: It is the same as the standard, except if there is a previous instance of the activity that exists in the top of the stack, then it will not create a new instance but rather send the intent to the existing instance of the activity. Eg: Suppose there is an activity stack of A -> B. Now if we launch C with the launch mode as \"singleTop”, the new stack will be A -> B -> C as usual. Now if there is an activity stack of A -> B -> C. If we launch C again with the launch mode as \"singleTop”, the new stack will still be A -> B -> C. SingleTask: A new task will always be created and a new instance will be pushed to the task as the root one. So if the activity is already in the task, the intent will be redirected to onNewIntent() else a new instance will be created. At a time only one instance of activity will exist. Eg: Suppose there is an activity stack of A -> B -> C -> D. Now if we launch D with the launch mode as \"singleTask”, the new stack will be A -> B -> C -> D as usual. Now if there is an activity stack of A -> B -> C -> D. If we launch activity B again with the launch mode as \"singleTask”, the new activity stack will be A -> B. Activities C and D will be destroyed. SingleInstance: Same as single task but the system does not launch any activities in the same task as this activity. If new activities are launched, they are done so in a separate task. Eg: Suppose there is an activity stack of A -> B -> C -> D. If we launch activity B again with the launch mode as singleInstance, the new activity stack will be: Task1-- A -> B -> C Task2--D"
+  },
+  {
+    "id": 9,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Backstack",
+      "Activity"
+    ],
+    "question": "Mention two ways to clear the back stack of Activities when a new Activity is called using intent",
+    "answer": "The first approach is to use a FLAG_ACTIVITY_CLEAR_TOP flag. The second way is by using FLAG_ACTIVITY_CLEAR_TASK and FLAG_ACTIVITY_NEW_TASK in conjunction."
+  },
+  {
+    "id": 10,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "FLAG",
+      "Activity"
+    ],
+    "question": "What's the difference between FLAG_ACTIVITY_CLEAR_TASK and FLAG_ACTIVITY_CLEAR_TOP",
+    "answer": "FLAG_ACTIVITY_CLEAR_TASK is used to clear all the activities from the task including any existing instances of the class invoked. The Activity launched by intent becomes the new root of the otherwise empty task list. This flag has to be used in conjunction with FLAG_ ACTIVITY_NEW_TASK. FLAG_ACTIVITY_CLEAR_TOP on the other hand, if set and if an old instance of this Activity exists in the task list then barring that all the other activities are removed and that old activity becomes the root of the task list. Else if there's no instance of that activity then a new instance of it is made the root of the task list. Using FLAG_ACTIVITY_NEW_TASK in conjunction is a good practice, though not necessary."
+  },
+  {
+    "id": 11,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "ContentProvider"
+    ],
+    "question": "Describe content providers",
+    "answer": "A ContentProvider provides data from one application to another, when requested. It manages access to a structured set of data. It provides mechanisms for defining data security. ContentProvider is the standard interface that connects data in one process with code running in another process. When you want to access data in a ContentProvider, you must instead use the ContentResolver object in your application's Context to communicate with the provider as a client. The provider object receives data requests from clients, performs the requested action, and returns the results."
+  },
+  {
+    "id": 12,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Service"
+    ],
+    "question": "Describe services",
+    "answer": "A Service is an application component that can perform long-running operations in the background, and it doesn't provide a user interface. It can run in the background, even when the user is not interacting with your application. These are the three different types of services: Foreground Service: A foreground service performs some operation that is noticeable to the user. For example, we can use a foreground service to play an audio track. A Notification must be displayed to the user. Background Service: A background service performs an operation that isn't directly noticed by the user. In Android API level 26 and above, there are restrictions to using background services and it is recommended to use WorkManager in these cases. Bound Service: A service is bound when an application component binds to it by calling bindService(). A bound service offers a client-server interface that allows components to interact with the service, send requests, receive results. A bound service runs only as long as another application component is bound to it."
+  },
+  {
+    "id": 13,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Service"
+    ],
+    "question": "Difference between Service & Intent Service",
+    "answer": "Service is the base class for Android services that can be extended to create any service. A class that directly extends Service runs on the main thread so it will block the UI (if there is one) and should therefore either be used only for short tasks or should make use of other threads for longer tasks. IntentService is a subclass of Service that handles asynchronous requests (expressed as “Intents”) on demand. Clients send requests through startService(Intent) calls. The service is started as needed, handles each Intent in turn using a worker thread, and stops itself when it runs out of work."
+  },
+  {
+    "id": 14,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "AsyncTask",
+      "Thread"
+    ],
+    "question": "Difference between AsyncTasks & Threads",
+    "answer": "Thread should be used to separate long running operations from main thread so that performance is improved. But it can't be cancelled elegantly and it can't handle configuration changes of Android. You can't update UI from Thread. AsyncTask can be used to handle work items shorter than 5ms in duration. With AsyncTask, you can update UI unlike java Thread. But many long running tasks will choke the performance."
+  },
+  {
+    "id": 15,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Service",
+      "AsyncTask",
+      "Thread"
+    ],
+    "question": "Difference between Service, Intent Service, AsyncTask & Threads",
+    "answer": "Android service is a component that is used to perform operations on the background such as playing music. It doesn't has any UI (user interface). The service runs in the background indefinitely even if application is destroyed. AsyncTask allows you to perform asynchronous work on your user interface. It performs the blocking operations in a worker thread and then publishes the results on the UI thread, without requiring you to handle threads and/or handlers yourself. IntentService is a base class for Services that handle asynchronous requests (expressed as Intents) on demand. Clients send requests through startService(Intent) calls; the service is started as needed, handles each Intent in turn using a worker thread, and stops itself when it runs out of work. A thread is a single sequential flow of control within a program. Threads can be thought of as mini-processes running within a main process."
+  },
+  {
+    "id": 16,
+    "level": 1,
+    "langCategory": 1,
+    "hashtags": [
+      "Handler"
+    ],
+    "question": "What are Handlers",
+    "answer": "Handlers are objects for managing threads. It receives messages and writes code on how to handle the message. They run outside of the activity's lifecycle, so they need to be cleaned up properly or else you will have thread leaks. Handlers allow communicating between the background thread and the main thread. A Handler class is preferred when we need to perform a background task repeatedly after every x seconds/minutes."
+  },
+  {
+    "id": 17,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "JobSchedule"
+    ],
+    "question": "What is a Job Scheduling",
+    "answer": "Job Scheduling api, as the name suggests, allows to schedule jobs while letting the system optimize based on memory, power, and connectivity conditions. The JobScheduler supports batch scheduling of jobs. The Android system can combine jobs so that battery consumption is reduced. JobManager makes handling uploads easier as it handles automatically the unreliability of the network. It also survives application restarts. Some scenarios: #Tasks that should be done once the device is connect to a power supply #Tasks that require network access or a Wi-Fi connection. #Task that are not critical or user facing #Tasks that should be running on a regular basis as batch where the timing is not critical #You can click on this link to learn more about Job Schedulers."
+  },
+  {
+    "id": 18,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "AsyncTask",
+      "LifeCycle"
+    ],
+    "question": "What is the relationship between the life cycle of an AsyncTask and an Activity? What problems can this result in? How can these problems be avoided",
+    "answer": "An AsyncTask is not tied to the life cycle of the Activity that contains it. So, for example, if you start an AsyncTask inside an Activity and the user rotates the device, the Activity will be destroyed (and a new Activity instance will be created) but the AsyncTask will not die but instead goes on living until it completes. Then, when the AsyncTask does complete, rather than updating the UI of the new Activity, it updates the former instance of the Activity (i.e., the one in which it was created but that is not displayed anymore!). This can lead to an Exception (of the type java.lang.IllegalArgumentException: View not attached to window manager if you use, for instance, findViewById to retrieve a view inside the Activity). There's also the potential for this to result in a memory leak since the AsyncTask maintains a reference to the Activity, which prevents the Activity from being garbage collected as long as the AsyncTask remains alive. For these reasons, using AsyncTasks for long-running background tasks is generally a bad idea . Rather, for long-running background tasks, a different mechanism (such as a service) should be employed. #Note: AsyncTasks by default run on a single thread using a serial executor, meaning it has only 1 thread and each task runs one after the other."
+  },
+  {
+    "id": 19,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Application",
+      "onTrimMemory"
+    ],
+    "question": "What is the onTrimMemory() method",
+    "answer": "onTrimMemory(): Called when the operating system has determined that it is a good time for a process to trim unneeded memory from its process. This will happen for example when it goes in the background and there is not enough memory to keep as many background processes running as desired. Android can reclaim memory for from your app in several ways or kill your app entirely if necessary to free up memory for critical tasks. To help balance the system memory and avoid the system's need to kill your app process, you can implement the ComponentCallbacks2 interface in your Activity classes. The provided onTrimMemory() callback method allows your app to listen for memory related events when your app is in either the foreground or the background, and then release objects in response to app lifecycle or system events that indicate the system needs to reclaim memory."
+  },
+  {
+    "id": 20,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "BoundService"
+    ],
+    "question": "Android Bound Service",
+    "answer": "A bound service is a service that allows other android components (like activity) to bind to it and send and receive data. A bound service is a service that can be used not only by components running in the same process as local service, but activities and services, running in different processes, can bind to it and send and receive data. When implementing a bound service we have to extend Service class but we have to override onBind method too. This method returns an object that implements IBinder, that can be used to interact with the service. Implementing Android bound service with Android Messenger Service based on Messenger can communicate with other components in different processes, known as Inter Process Communication (IPC), without using AIDL. A service handler: this component handles incoming requests from clients that interact with the service itself. A Messenger: this class is used to create an object implementing IBinder interface so that a client can interact with the service."
+  },
+  {
+    "id": 21,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "AIDL",
+      "MessengerQueue"
+    ],
+    "question": "AIDL vs Messenger Queue",
+    "answer": "Messenger Queue builds us a queue and the data/messages are passed between 2 or more processes sequential. But in case of AIDL the messages are passed in parallel. #AIDL is for the purpose when you've to go application level communication for data and control sharing, a scenario depicting it can be : An app requires list of all contacts from Contacts app (content part lies here) plus it also wants to show the call's duration and you can also disconnect it from that app (control part lies here). #In Messenger queues you're more IN the application and working on threads and processes to manage the queue having messages so no Outside services interference here. #Messenger is needed if you want to bind a remote service (e.g. running in another process)."
+  },
+  {
+    "id": 22,
+    "level": 3,
+    "langCategory": 1,
+    "hashtags": [
+      "Thread",
+      "ThreadPool"
+    ],
+    "question": "What is a ThreadPool? And is it more effective than using several separate Threads",
+    "answer": "Creating and destroying threads has a high CPU usage, so when we need to perform lots of small, simple tasks concurrently, the overhead of creating our own threads can take up a significant portion of the CPU cycles and severely affect the final response time. ThreadPool consists of a task queue and a group of worker threads, which allows it to run multiple parallel instances of a task."
+  },
+  {
+    "id": 23,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Serializable",
+      "Parcelable"
+    ],
+    "question": "Difference between Serializable and Parcelable",
+    "answer": "Serialization is the process of converting an object into a stream of bytes in order to store an object into memory, so that it can be recreated at a later time, while still keeping the object's original state and data. How to disallow serialization? We can declare the variable as transient. Serializable is a standard Java interface. Parcelable is an Android specific interface where you implement the serialization yourself. It was created to be far more efficient than Serializable (The problem with this approach is that reflection is used and it is a slow process. This mechanism also tends to create a lot of temporary objects and cause quite a bit of garbage collection.)."
+  },
+  {
+    "id": 24,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Activity",
+      "Service"
+    ],
+    "question": "Difference between Activity & Service",
+    "answer": "Activities are basically containers or windows to the user interface. Services is a component that is used to perform operations on the background. It does not have an UI."
+  },
+  {
+    "id": 25,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "UI",
+      "Service"
+    ],
+    "question": "How would you update the UI of an activity from a background service",
+    "answer": "We need to register a LocalBroadcastReceiver in the activity. And send a broadcast with the data using intents from the background service. As long as the activity is in the foreground, the UI will be updated from the background. Ensure to unregister the broadcast receiver in the onStop() method of the activity to avoid memory leaks. We can also register a Handler and pass data using Handlers."
+  },
+  {
+    "id": 26,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Intent"
+    ],
+    "question": "What is an intent",
+    "answer": "Intents are messages that can be used to pass information to the various components of android. For instance, launch an activity, open a webview etc. Two types of intents- #Implicit: Implicit intent is when you call system default intent like send email, send SMS, dial number. #Explicit: Explicit intent is when you call an application activity from another activity of the same application."
+  },
+  {
+    "id": 27,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Intent",
+      "StickyIntent"
+    ],
+    "question": "What is a Sticky Intent",
+    "answer": "Sticky Intents allows communication between a function and a service. sendStickyBroadcast() performs a sendBroadcast(Intent) known as sticky, i.e. the Intent you are sending stays around after the broadcast is complete, so that others can quickly retrieve that data through the return value of registerReceiver(BroadcastReceiver, IntentFilter). For example, if you take an intent for ACTION_BATTERY_CHANGED to get battery change events: When you call registerReceiver() for that action -- even with a null BroadcastReceiver -- you get the Intent that was last Broadcast for that action. Hence, you can use this to find the state of the battery without necessarily registering for all future state changes in the battery."
+  },
+  {
+    "id": 28,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Intent",
+      "PendingIntent"
+    ],
+    "question": "What is a Pending Intent",
+    "answer": "If you want someone to perform any Intent operation at future point of time on behalf of you, then we will use Pending Intent."
+  },
+  {
+    "id": 29,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Intent",
+      "Action"
+    ],
+    "question": "What is an Action",
+    "answer": "Description of the intent. For instance, ACTION_CALL--used to perform calls"
+  },
+  {
+    "id": 30,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Intent",
+      "intentFilter"
+    ],
+    "question": "What are intent Filters",
+    "answer": "Specifies the type of intent that the activity/service can respond to."
+  },
+  {
+    "id": 31,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment"
+    ],
+    "question": "Describe fragments",
+    "answer": "Fragment is a UI entity attached to Activity. Fragments can be reused by attaching in different activities. Activity can have multiple fragments attached to it. Fragment must be attached to an activity and its lifecycle will depend on its host activity."
+  },
+  {
+    "id": 32,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "Lifecycle"
+    ],
+    "question": "Describe fragment lifecycle",
+    "answer": "#onAttach() : The fragment instance is associated with an activity instance.The fragment and the activity is not fully initialized. Typically you get in this method a reference to the activity which uses the fragment for further initialization work. #onCreate() : The system calls this method when creating the fragment. You should initialize essential components of the fragment that you want to retain when the fragment is paused or stopped, then resumed. #onCreateView() : The system calls this callback when it's time for the fragment to draw its user interface for the first time. To draw a UI for your fragment, you must return a View component from this method that is the root of your fragment's layout. You can return null if the fragment does not provide a UI. #onActivityCreated() : The onActivityCreated() is called after the onCreateView() method when the host activity is created. Activity and fragment instance have been created as well as the view hierarchy of the activity. At this point, view can be accessed with the findViewById() method. example. In this method you can instantiate objects which require a Context object #onStart() : The onStart() method is called once the fragment gets visible. #onResume() : Fragment becomes active. #onPause() : The system calls this method as the first indication that the user is leaving the fragment. This is usually where you should commit any changes that should be persisted beyond the current user session. #onStop() : Fragment going to be stopped by calling onStop() #onDestroyView() : Fragment view will destroy after call this method #onDestroy() :called to do final clean up of the fragment's state but Not guaranteed to be called by the Android platform."
+  },
+  {
+    "id": 33,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "Activity"
+    ],
+    "question": "What is the difference between fragments & activities. Explain the relationship between the two.",
+    "answer": "An Activity is an application component that provides a screen, with which users can interact in order to do something whereas a Fragment represents a behavior or a portion of user interface in an Activity (with its own lifecycle and input events, and which can be added or removed at will)."
+  },
+  {
+    "id": 34,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "Activity"
+    ],
+    "question": "When should you use a fragment rather than an activity",
+    "answer": "#When there are ui components that are going to be used across multiple activities. #When there are multiple views that can be displayed side by side (viewPager tabs) #When you have data that needs to be persisted across Activity restarts (such as retained fragments)"
+  },
+  {
+    "id": 35,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "Backstack"
+    ],
+    "question": "Difference between adding/replacing fragment in backstack",
+    "answer": "#replace removes the existing fragment and adds a new fragment. This means when you press back button the fragment that got replaced will be created with its onCreateView being invoked. #add retains the existing fragments and adds a new fragment that means existing fragment will be active and they wont be in ‘paused' state hence when a back button is pressed onCreateView is not called for the existing fragment(the fragment which was there before new fragment was added). #In terms of fragment's life cycle events onPause, onResume, onCreateView and other life cycle events will be invoked in case of replace but they wont be invoked in case of add."
+  },
+  {
+    "id": 36,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment"
+    ],
+    "question": "Why is it recommended to use only the default constructor to create a Fragment",
+    "answer": "The reason why you should be passing parameters through bundle is because when the system restores a fragment (e.g on config change), it will automatically restore your bundle. This way you are guaranteed to restore the state of the fragment correctly to the same state the fragment was initialised with."
+  },
+  {
+    "id": 37,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "Backstack"
+    ],
+    "question": "Callbacks invoked during addition of a fragment to back stack and while popping back from back stack:",
+    "answer": "addOnBackStackChangedListener is called when fragment is added or removed from the backstack."
+  },
+  {
+    "id": 38,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment"
+    ],
+    "question": "What are retained fragments",
+    "answer": "By default, Fragments are destroyed and recreated along with their parent Activity's when a configuration change occurs. Calling setRetainInstance(true) allows us to bypass this destroy-and-recreate cycle, signaling the system to retain the current instance of the fragment when the activity is recreated."
+  },
+  {
+    "id": 39,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "FragmentPagerAdapter"
+    ],
+    "question": "Difference between FragmentPagerAdapter vs FragmentStatePagerAdapter",
+    "answer": "#FragmentPagerAdapter: the fragment of each page the user visits will be stored in memory, although the view will be destroyed. So when the page is visible again, the view will be recreated but the fragment instance is not recreated. This can result in a significant amount of memory being used. FragmentPagerAdapter should be used when we need to store the whole fragment in memory. FragmentPagerAdapter calls detach(Fragment) on the transaction instead of remove(Fragment). #FragmentStatePagerAdapter: the fragment instance is destroyed when it is not visible to the User, except the saved state of the fragment. This results in using only a small amount of Memory and can be useful for handling larger data sets. Should be used when we have to use dynamic fragments, like fragments with widgets, as their data could be stored in the savedInstanceState.Also it won't affect the performance even if there are large number of fragments."
+  },
+  {
+    "id": 40,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Loaders"
+    ],
+    "question": "What are Loaders in Android",
+    "answer": "Loader API was introduced in API level 11 and is used to load data from a data source to display in an activity or fragment. Loaders persist and cache results across configuration changes to prevent duplicate queries."
+  },
+  {
+    "id": 41,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "DialogFragment"
+    ],
+    "question": "What is the difference between Dialog & DialogFragment",
+    "answer": "A fragment that displays a dialog window, floating on top of its activity's window. This fragment contains a Dialog object, which it displays as appropriate based on the fragment's state. Dialogs are entirely dependent on Activities. If the screen is rotated, the dialog is dismissed. Dialog fragments take care of orientation, configuration changes as well."
+  },
+  {
+    "id": 42,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "ViewGroup",
+      "View"
+    ],
+    "question": "What is ViewGroup? How are they different from Views",
+    "answer": "#View: View objects are the basic building blocks of User Interface(UI) elements in Android. View is a simple rectangle box which responds to the user's actions. Examples are EditText, Button, CheckBox etc. View refers to the android.view.View class, which is the base class of all UI classes. #ViewGroup: ViewGroup is the invisible container. It holds View and ViewGroup. For example, LinearLayout is the ViewGroup that contains Button(View), and other Layouts also. ViewGroup is the base class for Layouts."
+  },
+  {
+    "id": 43,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "PNG",
+      "NinePatch"
+    ],
+    "question": "What is the difference between a regular .png and a nine-patch image",
+    "answer": "It is one of a resizable bitmap resource which is being used as backgrounds or other images on the device. The NinePatch class allows drawing a bitmap in nine sections. The four corners are unscaled; the middle of the image is scaled in both axes, the four edges are scaled into one axis."
+  },
+  {
+    "id": 44,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "ConstraintLayout"
+    ],
+    "question": "What is ConstraintLayout",
+    "answer": "It allows you to create large and complex layouts with a flat view hierarchy (no nested view groups). It's similar to RelativeLayout in that all views are laid out according to relationships between sibling views and the parent layout, but it's more flexible than RelativeLayout and easier to use with Android Studio's Layout Editor."
+  },
+  {
+    "id": 45,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Adapter"
+    ],
+    "question": "What is Adapters",
+    "answer": "An adapter responsible for converting each data entry into a View that can then be added to the AdapterView (ListView/RecyclerView)."
+  },
+  {
+    "id": 46,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "ScreenSize"
+    ],
+    "question": "How to support different screen sizes",
+    "answer": "#Create a flexible layout -- The best way to create a responsive layout for different screen sizes is to use ConstraintLayout as the base layout in your UI. ConstraintLayout allows you to specify the position and size for each view according to spatial relationships with other views in the layout. This way, all the views can move and stretch together as the screen size changes. # Create stretchable nine-patch bitmaps # Avoid hard-coded layout sizes -- Use wrap_content or match_parent. Create alternative layouts -- The app should provide alternative layouts to optimise the UI design for certain screen sizes. For eg: different UI for tablets # Use the smallest width qualifier -- For example, you can create a layout named main_activity that's optimised for handsets and tablets by creating different versions of the file in directories as follows: # res/layout/main_activity.xml -- For handsets (smaller than 600dp available width) # res/layout-sw600dp/main_activity.xml -- For 7” tablets (600dp wide and bigger). # The smallest width qualifier specifies the smallest of the screen's two sides, regardless of the device's current orientation, so it's a simple way to specify the overall screen size available for your layout."
+  },
+  {
+    "id": 47,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Custom Views"
+    ],
+    "question": "Outline the process of creating custom Views",
+    "answer": "#Create a class that Subclass a view #Create a res/values/attrs.xml file and declare the attributes you want to use with your custom View. #In your View class, add a constructor method, instantiate the Paint object, and retrieve your custom attributes. #Override either onSizeChanged() or onMeasure(). #Draw your View by overriding onDraw()."
+  },
+  {
+    "id": 48,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "Optimize",
+      "View"
+    ],
+    "question": "Briefly describe some ways that you can optimize View usage",
+    "answer": "#Checking for excessive overdraw: install your app on an Android device, and then enable the “Debug GPU Overview” option. #Flattening your view hierarchy: inspect your view hierarchy using Android Studio's ‘Hierarchy Viewer' tool. #Measuring how long it takes each View to complete the measure, layout, and draw phases. You can also use Hierarchy Viewer to identify any parts of the rendering pipeline that you need to optimise."
+  },
+  {
+    "id": 49,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Bitmap",
+      "Pooling"
+    ],
+    "question": "Bitmap pooling in android",
+    "answer": "Bitmap pooling is a simple technique, that aims to reuse bitmaps instead of creating new ones every time. When you need a bitmap, you check a bitmap stack to see if there are any bitmaps available. If there are not bitmaps available you create a new bitmap otherwise you pop a bitmap from the stack and reuse it. Then when you are done with the bitmap, you can put it on a stack."
+  },
+  {
+    "id": 50,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Permission",
+      "ProtectionLevel"
+    ],
+    "question": "What are the permission protection levels in Android",
+    "answer": "#Normal -- A lower-risk permission that gives requesting applications access to isolated application-level features, with minimal risk to other applications, the system, or the user. The system automatically grants this type of permission to a requesting application at installation, without asking for the user's explicit approval. #Dangerous -- A higher-risk permission. Any dangerous permissions requested by an application may be displayed to the user and require confirmation before proceeding, or some other approach may be taken to avoid the user automatically allowing the use of such facilities. #Signature -- A permission that the system grants only if the requesting application is signed with the same certificate as the application that declared the permission. If the certificates match, the system automatically grants the permission without notifying the user or asking for the user's explicit approval. #SignatureOrSystem -- A permission that the system grants only to applications that are in the Android system image or that are signed with the same certificate as the application that declared the permission."
+  },
+  {
+    "id": 51,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Android",
+      "ANR"
+    ],
+    "question": "What is an Application Not Responding (ANR) error, and how can you prevent them from occurring in an app",
+    "answer": "An ANR dialog appears when your UI has been unresponsive for more than 5 seconds, usually because you've blocked the main thread. To avoid encountering ANR errors, you should move as much work off the main thread as possible."
+  },
+  {
+    "id": 52,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "SharedPreference",
+      "apply",
+      "commit"
+    ],
+    "question": "What's the difference between commit() and apply() in SharedPreferences",
+    "answer": "#commit() writes the data synchronously and returns a boolean value of success or failure depending on the result immediately. #apply() is asynchronous and it won't return any boolean response. Also if there is an apply() outstanding and we perform another commit(). The commit() will be blocked until the apply() is not completed."
+  },
+  {
+    "id": 53,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "View",
+      "RecyclerView"
+    ],
+    "question": "How does RecyclerView work",
+    "answer": "#RecyclerView is designed to display long lists (or grids) of items. Say we want to display 100 row of items. A simple approach would be to just create 100 views, one for each row and lay all of them out. But that would be wasteful because at any point of time, only 10 or so items could fit on screen and the remaining items would be off screen. So RecyclerView instead creates only the 10 or so views that are on screen. This way you get 10x better speed and memory usage. # But what happens when you start scrolling and need to start showing next views? Again a simple approach would be to create a new view for each new row that you need to show. But this way by the time you reach the end of the list you will have created 100 views and your memory usage would be the same as in the first approach. And creating views takes time, so your scrolling most probably wouldn't be smooth. This is why RecyclerView takes advantage of the fact that as you scroll, new rows come on screen also old rows disappear off screen. Instead of creating new view for each new row, an old view is recycled and reused by binding new data to it. # This happens inside the onBindViewHolder() method. Initially you will get new unused view holders and you have to fill them with data you want to display. But as you scroll you will start getting view holders that were used for rows that went off screen and you have to replace old data that they held with new data."
+  },
+  {
+    "id": 54,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "RecyclerView",
+      "ListView"
+    ],
+    "question": "How does RecyclerView differ from ListView",
+    "answer": "#ViewHolder Pattern: Recyclerview implements the ViewHolders pattern whereas it is not mandatory in a ListView. A RecyclerView recycles and reuses cells when scrolling. # What is a ViewHolder Pattern? -- A ViewHolder object stores each of the component views inside the tag field of the Layout, so you can immediately access them without the need to look them up repeatedly. In ListView, the code might call findViewById() frequently during the scrolling of ListView, which can slow down performance. Even when the Adapter returns an inflated view for recycling, you still need to look up the elements and update them. A way around repeated use of findViewById() is to use the \"view holder\" design pattern. # LayoutManager: In a ListView, the only type of view available is the vertical ListView. A RecyclerView decouples list from its container so we can put list items easily at run time in the different containers (linearLayout, gridLayout) by setting LayoutManager. # Item Animator: ListViews are lacking in support of good animations, but the RecyclerView brings a whole new dimension to it."
+  },
+  {
+    "id": 55,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "APK",
+      "Size"
+    ],
+    "question": "How to reduce apk size in Android",
+    "answer": "#Enable proguard in your project by adding following lines to your release build type. #Enable shrinkResources. #Strip down all the unused locale resources by adding required resources name in “resConfigs”. #Convert all the images to the webp or vector drawables."
+  },
+  {
+    "id": 56,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "Build",
+      "Time"
+    ],
+    "question": "How to reduce build time of an android application",
+    "answer": "A few commands we can add to the gradle.properties file: #org.gradle.configureondemand=true - This command will tell gradle to only build the projects that it really needs to build. #Use Daemon -- org.gradle.daemon=true - Daemon keeps the instance of the gradle up and running in the background even after your build finishes. This will remove the time required to initialize the gradle and decrease your build timing significantly. #org.gradle.parallel=true - Allow gradle to build your project in parallel. If you have multiple modules in you project, then by enabling this, gradle can run build operations for independent modules parallelly. #Increase Heap Size -- org.gradle.jvmargs=-Xmx3072m -XX:MaxPermSize=512m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8 - Since android studio 2.0, gradle uses dex in the process to decrease the build timings for the project. Generally, while building the applications, multiple dx processes runs on different VM instances. But starting from the Android Studio 2.0, all these dx processes runs in the single VM and that VM is also shared with the gradle. This decreases the build time significantly as all the dex process runs on the same VM instances. But this requires larger memory to accommodate all the dex processes and gradle. That means you need to increase the heap size required by the gradle daemon. By default, the heap size for the daemon is about 1GB. #Ensure that dynamic dependency is not used. i.e. do not use implementation 'com.android.support:appcompat-v7:27.0.+'. This command means gradle will go online and check for the latest version every time it builds the app. Instead use fixed versions i.e. 'com.android.support:appcompat-v7:27.0.2'"
+  },
+  {
+    "id": 57,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Architecture",
+      "Components"
+    ],
+    "question": "Android Architecture Components",
+    "answer": "A collection of libraries that help you design robust, testable, and maintainable apps. #Room:The Room persistence library provides an abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite. #Live Data:is an observable data holder class. Unlike a regular observable, LiveData is lifecycle-aware, meaning it respects the lifecycle of other app components, such as activities, fragments, or services. This awareness ensures LiveData only updates app component observers that are in an active lifecycle state. #ViewModel: The ViewModel class is designed to store and manage UI-related data in a lifecycle conscious way. The ViewModel class allows data to survive configuration changes such as screen rotations. #Data Binding :The Data Binding Library is a support library that allows you to bind UI components in your layouts to data sources in your app using a declarative format rather than programmatically. #Lifecycles : Lifecycle-aware components perform actions in response to a change in the lifecycle status of another component, such as activities and fragments. These components help you produce better-organized, and often lighter-weight code, that is easier to maintain. A common pattern is to implement the actions of the dependent components in the lifecycle methods of activities and fragments. However, this pattern leads to a poor organization of the code and to the proliferation of errors. By using lifecycle-aware components, you can move the code of dependent components out of the lifecycle methods and into the components themselves. The android.arch.lifecycle package provides classes and interfaces that let you build lifecycle-aware components—which are components that can automatically adjust their behavior based on the current lifecycle state of an activity or fragment."
+  },
+  {
+    "id": 58,
+    "level": 2,
+    "langCategory": 3,
+    "hashtags": [
+      "SOLID",
+      "principle"
+    ],
+    "question": "S.O.L.I.D principles in software development",
+    "answer": "#The Single Responsibility Principle (SRP) #The Open-Closed Principle (OCP) #The Liskov Substitution Principle (LSP) #The Interface Segregation Principle (ISP) #The Dependency Inversion Principle (DIP)"
+  },
+  {
+    "id": 59,
+    "level": 2,
+    "langCategory": 3,
+    "hashtags": [
+      "MVP",
+      "MVVM"
+    ],
+    "question": "Difference between MVC & MVP & MVVM",
+    "answer": "MVC is the Model-View-Controller architecture where model refers to the data model classes. The view refers to the xml files and the controller handles the business logic. The issue with this architecture is unit testing. The model can be easily tested since it is not tied to anything. The controller is tightly coupled with the android apis making it difficult to unit test. Modularity & flexibility is a problem since the view and the controller are tightly coupled. If we change the view, the controller logic should also be changed. Maintenance is also an issues. MVP architecture: Model-View-Presenter architecture. The View includes the xml and the activity/fragment classes. So the activity would ideally implement a view interface making it easier for unit testing (since this will work without a view). MVVM: Model-View-ViewModel Architecture. The Model comprises data, tools for data processing, business logic. The View Model is responsible for wrapping the model data and preparing the data for the view. IT also provides a hook to pass events from the view to the model. "
+  },
+  {
+    "id": 60,
+    "level": 2,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "Java"
+    ],
+    "question": "What's the Target Platform of Kotlin? How is Kotlin-Java interoperability possible",
+    "answer": "Java Virtual Machine(JVM) is the Target Platform of Kotlin. Kotlin is 100% interoperable with Java since both, on compilation produce bytecode. Hence Kotlin code can be called from Java and vice-versa."
+  },
+  {
+    "id": 61,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "const",
+      "val"
+    ],
+    "question": "What's a const? How does it differ from a val",
+    "answer": "By default val properties are set at runtime. Adding a const modifier on a val would make a compile-time constant. #A const cannot be used with a var or on its own. #A const is not applicable on a local variable."
+  },
+  {
+    "id": 62,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin"
+    ],
+    "question": "What's the entry point of every Kotlin Program",
+    "answer": "The main function is the entry point of every Kotlin program. In Kotlin we can choose not to write the main function inside the class. On compiling the JVM implicitly encapsulates it in a class. The strings passed in the form of Array<String> are used to retrieve the command line arguments. "
+  },
+  {
+    "id": 63,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "NullSafety",
+      "Assert"
+    ],
+    "question": "How is !!different from ?. in unwrapping the nullable values? Is there any other way to unwrap nullable values safely",
+    "answer": "!! is used to force unwrap the nullable type to get the value. If the value returned is a null, it would lead to a runtime crash. Hence a !! operator should be only used when you're absolutely sure that the value won't be null at all. Otherwise, you'll get the dreaded null pointer exception. On the other hand, a ?. is an Elvis Operator that does a safe call."
+  },
+  {
+    "id": 64,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "equalOperator"
+    ],
+    "question": "What's the difference between == and === operators in Kotlin",
+    "answer": "== is used to compare the values are equal or not. === is used to check if the references are equal or not. "
+  },
+  {
+    "id": 65,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "constructor"
+    ],
+    "question": "What are the types of constructors in Kotlin? How are they different? How do you define them in your class",
+    "answer": "Constructors in Kotlin are of two types: #Primary – These are defined in the class headers. They cannot hold any logic. There's only one primary constructor per class. #Secondary – They're defined in the class body. They must delegate to the primary constructor if it exists. They can hold logic. There can be more than one secondary constructors."
+  },
+  {
+    "id": 66,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "init"
+    ],
+    "question": "What's init block in Kotlin",
+    "answer": "init is the intialiser block in Kotlin. It's executed once the constructor is instantiated."
+  },
+  {
+    "id": 67,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "lazy",
+      "lateinit"
+    ],
+    "question": "What's the difference between lazy and lateinit",
+    "answer": "Both are used to delay the property initializations in Kotlin lateinit is a modifier used with var and is used to set the value to the var at a later point. lazy is a method or rather say lambda expression. It's set on a val only. The val would be created at runtime when it's required."
+  },
+  {
+    "id": 68,
+    "level": 1,
+    "langCategory": 2,
+    "hashtags": [
+      "Kotlin",
+      "Singleton"
+    ],
+    "question": "How to create Singleton classes",
+    "answer": "To use the singleton pattern for our class we must use the keyword object object MySingletonClass An object cannot have a constructor set. We can use the init block inside it though."
+  },
+  {
+    "id": 69,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Jetpack"
+    ],
+    "question": "Android Jetpack",
+    "answer": "Jetpack is a collection of Android software components to make it easier for you to develop great Android apps. These components help you follow best practices, free you from writing boilerplate code, and simplify complex tasks, so you can focus on the code you care about. Jetpack comprises the androidx.* package libraries, unbundled from the platform APIs. This means that it offers backward compatibility and is updated more frequently than the Android platform, making sure you always have access to the latest and greatest versions of the Jetpack components."
+  },
+  {
+    "id": 70,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "AndroidX"
+    ],
+    "question": "What is AndroidX",
+    "answer": "AndroidX is the open-source project that the Android team uses to develop, test, package, version and release libraries within Jetpack. AndroidX is a major improvement to the original Android Support Library. Like the Support Library, AndroidX ships separately from the Android OS and provides backwards-compatibility across Android releases. AndroidX fully replaces the Support Library by providing feature parity and new libraries. In addition AndroidX includes the following features: All packages in AndroidX live in a consistent namespace starting with the string androidx. The Support Library packages have been mapped into corresponding androidx.* packages. For a full mapping of all the old classes and build artifacts to the new ones, see the Package Refactoring page. Unlike the Support Library, AndroidX packages are separately maintained and updated. The androidx packages use strict Semantic Versioning starting with version 1.0.0. You can update AndroidX libraries in your project independently. All new Support Library development will occur in the AndroidX library. This includes maintenance of the original Support Library artifacts and introduction of new Jetpack components."
+  },
+  {
+    "id": 71,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "AndroidX"
+    ],
+    "question": "Using AndroidX",
+    "answer": "If you want to use AndroidX in a new project, you need to set the compile SDK to Android 9.0 (API level 28) or higher and set both of the following Android Gradle plugin flags to true in your gradle.properties file. # android.useAndroidX: When set to true, the Android plugin uses the appropriate AndroidX library instead of a Support Library. The flag is false by default if it is not specified. # android.enableJetifier: When set to true, the Android plugin automatically migrates existing third-party libraries to use AndroidX by rewriting their binaries. The flag is false by default if it is not specified.."
+  },
+  {
+    "id": 72,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "DeepLink"
+    ],
+    "question": "Deep Linking in Android",
+    "answer": "Deeplinks are a concept that help users navigate between the web and applications. They are basically URLs which navigate users directly to the specific content in applications."
+  },
+  {
+    "id": 73,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "AppLink"
+    ],
+    "question": "What is Android App Links",
+    "answer": "On the other hand, Android App Links allow an app to designate itself as the default handler of application domain or URL. Unfortunately It works only on on Android 6.0 (API level 23) and higher."
+  },
+  {
+    "id": 74,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "DeepLink",
+      "AppLink"
+    ],
+    "question": "What is the difference between deep links and app links",
+    "answer": "A deep link is an intent filter system that allows users to directly enter a specific activity in an Android app. However there is an issue about this process. When a user click an URL, it might open a dialog which asks the user to select one of multiple apps handling the given URL. On the other hand, An Android App Link is a deep link based on your website URL that has been verified to belong to your website. When user clicks that URL, it opens your app."
+  },
+  {
+    "id": 75,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "DeepLink"
+    ],
+    "question": "A Scenario For Deep Links to App Content",
+    "answer": "When a user clicked URL, the Android system tries each of the following actions, in sequential order, until the request succeeds: 1.Open the user's preferred app that can handle the URI, if one is designated. 2.Open the only available app that can handle the URI. 3.Allow the user to select an app from a dialog."
+  },
+  {
+    "id": 76,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Troubleshoot",
+      "Crash"
+    ],
+    "question": "How do you troubleshoot android application which is crashing frequently",
+    "answer": "Given below are the few steps that we need to follow while troubleshooting the crashing issue: #Free up memory space: There is only a limited space available on the mobile devices for mobile apps. To avoid crashing issue or memory related issue, you need to first check the memory space. #Clear app data usage: You can clear the app data using the Application Manager under “Settings”. This will clear the cache memory and allow some free space to install another app or it will boost up your current app. #Memory Management: Some apps run perfectly on one type of mobile device but the same app may not work on another type of device as for such devices the processing power, memory management, and CPU speed is different. For any app to run properly on any type of mobile device, you should manage the memory on the device. #Compatibility issue: It is always not possible to test mobile app on all mobile devices, browsers, operating systems etc. So you need test your mobile app on as many mobile devices as you can in order to avoid any compatibility issue. "
+  },
+  {
+    "id": 77,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Memory",
+      "MemoryLeak"
+    ],
+    "question": "How do you find memory leaks in the mobile app on Android platform",
+    "answer": "Android Studio is using Android Device Manager (ADM), this ADM is used to detect the memory leaks in the Android platform. When you open ADM in the Android Studio then on the left-hand side of the ADM, you will find your device or emulator in which a heap sign will be displayed. When you are running any mobile app then you will see the heap size, memory analysis and other statistics displayed on it. "
+  },
+  {
+    "id": 78,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "DDMS"
+    ],
+    "question": "What is DDMS",
+    "answer": "Android Studio has debugging tools known as DDMS i.e. Dalvik Debug Monitor Server. It has wide debugging features which include: #Port forwarding services. #Screen capture on the device. #Thread and Heap information. #Incoming call and SMS spoofing. #Logcat #Radio state information. #Location data spoofing. DDMS is integrated with the Android studio. To launch the DDMS, you need to open Android Device Monitor (ADM) first and then click on the DDMS menu button. Once DDMS is launched, then on the left-hand side the list of connected devices are displayed along with the processes which are running on each device. With the help of DDMS, you can debug both on real devices and emulators."
+  },
+  {
+    "id": 79,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "ActivityCreator"
+    ],
+    "question": "What is ActivityCreator",
+    "answer": "ActivityCreator is a batch file and shell script which was used to create a new Android project. It is now replaced by “Create New Project” in Android SDK."
+  },
+  {
+    "id": 80,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "Backstack"
+    ],
+    "question": "You're replacing one Fragment with another — how do you ensure that the user can return to the previous Fragment, by pressing the Back button",
+    "answer": "If the 'Back' button is going to return the user to the previous Fragment, then you'll need to save each Fragment transaction to the back stack, by calling addToBackStack() before you commit() that transaction. The developer definitely shouldn't suggest creating a 'Back' button specifically to handle navigating between fragments, but bonus points if they mention that you should never try to commit a FragmentTransaction after calling onSaveInstanceState(), as this can result in an exception."
+  },
+  {
+    "id": 81,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "Thread"
+    ],
+    "question": "How would you create a multi-threaded Android app without using the Thread class",
+    "answer": "If you only need to override the run() method and no other Thread methods, then you should implement Runnable. In particular, be on the lookout for an Android developer demonstrating an understanding that you should only extend from a class when you need to modify some of its functionality."
+  },
+  {
+    "id": 82,
+    "level": 2,
+    "langCategory": 1,
+    "hashtags": [
+      "Thread"
+    ],
+    "question": "What is a ThreadPool? And is it more effective than using several separate Threads",
+    "answer": "ThreadPool consists of a task queue and a group of worker threads, which allows it to run multiple parallel instances of a task. Here, you're assessing the app developer's understanding of how multithreading has the potential to improve an app's performance, but also how it can negatively impact performance when used incorrectly. Using ThreadPool is more efficient than having multiple operations waiting to run on a single thread, but it also helps you avoid the considerable overhead of creating and destroying a thread every time you require a worker thread."
+  },
+  {
+    "id": 83,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "AIDL",
+      "Service"
+    ],
+    "question": "What are the steps involved in creating a bound service through Android Interface Definition Language (AIDL)",
+    "answer": " #Define an AIDL interface in an .aidl file. #Save this file in the src/ directory of the application hosting the Activity and any other application that needs to bind to this service — the latter is particularly important, and is often overlooked. #Build your application. Android SDK tools will then generate an IBinder interface file in your gen directory. #Implement this interface, by extending the generated Binder interface and implementing the methods inherited from the .aidl file. #Extend Service and override onBind() to return your implementation of the Stub class."
+  },
+  {
+    "id": 84,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "Fragment",
+      "Argument"
+    ],
+    "question": "How do you supply construction arguments into a Fragment",
+    "answer": "Construction arguments for a Fragment are passed via Bundle using the Fragment#setArgument(Bundle) method. The passed-in Bundle can then be retrieved through the Fragment#getArguments() method in the appropriate Fragment lifecycle method. It is a common mistake to pass in data through a custom constructor. Non-default constructors on a Fragment are not advisable because the Fragment may be destroyed and recreated due to a configuration change (e.g. orientation change). Using #setArguments()/getArguments() ensures that when the Fragment needs to be recreated, the Bundle will be appropriately serialized/deserialized so that construction data is restored."
+  },
+  {
+    "id": 85,
+    "level": 1,
+    "langCategory": 0,
+    "hashtags": [
+      "activity"
+    ],
+    "question": "Is it possible to create an activity in Android without a user interface ",
+    "answer": "Yes, an activity can be created without any user interface. These activities are treated as abstract activities."
+  },
+  {
+    "id": 86,
+    "level": 2,
+    "langCategory": 1,
+    "hashtags": [
+      "RxJava"
+    ],
+    "question": "What is RxJava",
+    "answer": "ReactiveX is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming. t ideas from the Observer pattern, the Iterator pattern, and functional programming. RxJava is the Java implementation of this concept. RxJava is published under the Apache 2.0 license. Basically it's a library that composes asynchronous events by following Observer Pattern. You can create asynchronous data stream on any thread, transform the data and consumed it by an Observer on any thread. RxJava provides Java API for asynchronous programming with observable streams."
+  },
+  {
+    "id": 87,
+    "level": 2,
+    "langCategory": 1,
+    "hashtags": [
+      "RxJava"
+    ],
+    "question": "What is use of RxJava in Android",
+    "answer": "Why should we use RxJava on Android. Reactive Extensions (Rx) are a set of interfaces and methods which provide a way to developers solve problems rapidly , simply to maintain, and easy to understand. RxJava provides just that, a set of tools to help you write clean and simpler code."
+  },
+  {
+    "id": 88,
+    "level": 3,
+    "langCategory": 1,
+    "hashtags": [
+      "RxJava"
+    ],
+    "question": "RxJava Operators",
+    "answer": "Operators are something that acts on an Observable and passes the transformed data to the Subscribers. With multiple operators, each operator finishes its own task and then passes the transformed data to the next operator. #map #filter #take #count #skip etc"
+  },
+  {
+    "id": 89,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "RxJava",
+      "RxAndroid"
+    ],
+    "question": "What is Android RxAndroid",
+    "answer": "RxAndroid is basically an android specific wrapper that provides some functions explicit to android and those are not available in RxJava. So, if you want to integrate Rx into your java project only, you don't need to implement RxAndroid library into your project."
+  },
+  {
+    "id": 90,
+    "level": 2,
+    "langCategory": 2,
+    "hashtags": [
+      "RxJava",
+      "RxKotlin"
+    ],
+    "question": "What is RxKotlin",
+    "answer": "RxKotlin is a lightweight library that adds convenient extension functions to RxJava."
+  },
+  {
+    "id": 91,
+    "level": 2,
+    "langCategory": 1,
+    "hashtags": [
+      "RxJava",
+      "Observable"
+    ],
+    "question": "What is Observable in RxJava",
+    "answer": "Observable is something that you can subscribe to to listen for the items that the observable will emit. They can be constructed in many different ways. However, they usually don’t begin emitting items until you subscribe to them."
+  },
+  {
+    "id": 92,
+    "level": 2,
+    "langCategory": 3,
+    "hashtags": [
+      "Dagger",
+      "DependencyInjection"
+    ],
+    "question": "What is Dagger",
+    "answer": "Dagger is a fully static, compile-time dependency injection framework for both Java and Android. It is an adaptation of an earlier version created by Square and now maintained by Google. Dagger aims to address many of the development and performance issues that have plagued reflection-based solutions. It can be used to manage dependency to build components which can be easily enhanced. With DI object production and consumption is separated. Dagger is light weight and it generates code at compile time so suitable for android."
+  },
+  {
+    "id": 93,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "Reflection"
+    ],
+    "question": "What is reflection Android",
+    "answer": "Reflection gives developers the flexibility to inspect and determine API characteristics at runtime, instead of compile time. Within the security constraints imposed by Java (e.g. use of public, protected, private), you can then construct objects, access fields, and invoke methods dynamically."
+  },
+  {
+    "id": 94,
+    "level": 2,
+    "langCategory": 3,
+    "hashtags": [
+      "UnitTest"
+    ],
+    "question": "What is unit testing",
+    "answer": "A complete application can be build up by integrating small-2 functional parts, such parts are called as units. It is always better to test such individual units before testing the entire application. The process of testing the functionality and working of these individual unit is known as unit testing. Unit testing can be done manually and the process can also be automated."
+  },
+  {
+    "id": 95,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "UnitTest",
+      "Before",
+      "BeforeClass"
+    ],
+    "question": "What is @Before and @BeforeClass and it’s usage",
+    "answer": "@BeforeClass : This method should execute before each test. Such methods are generally used for initialization before performing a actual test in test environment. @BeforeClass : This method should execute before all the tests. It executes only once. Method should be declared static. Mostly used for database connectivity tasks before execution of any of the test."
+  },
+  {
+    "id": 96,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "UnitTest",
+      "After",
+      "AfterClass"
+    ],
+    "question": "What is @After and @AfterClass and it’s usage",
+    "answer": "@After : This method should execute after each test and used for cleaning up the test and temporary data to avoid memory issues. @AfterClass : This method should execute at the end, once all the tests are finished. Method should be declared static and executes only a single time. Mostly used for closing the database connection."
+  },
+  {
+    "id": 97,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "UnitTest",
+      "Mockito"
+    ],
+    "question": "What is Mockito",
+    "answer": "Mockito is a popular mock framework which can be used in conjunction with JUnit. Mockito allows you to create and configure mock objects. Using Mockito greatly simplifies the development of tests for classes with external dependencies."
+  },
+  {
+    "id": 98,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "Lifecycle",
+      "Component"
+    ],
+    "question": "What is life cycle aware components",
+    "answer": "A life cycle aware component is a component which is aware of the life cycle of other components like activity or fragment and performs some action in response to change in life cycle status of this component."
+  },
+  {
+    "id": 99,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "LifecycleAware",
+      "ViewModel"
+    ],
+    "question": "What is ViewModel",
+    "answer": "ViewModel provides a way to create and retrieve objects that are bound to a specific lifecycle. A ViewModel typically stores the state of a view's data and communicates with other components, such as data repositories or the domain layer which handles business logic."
+  },
+  {
+    "id": 100,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "LifecycleAware",
+      "LifecycleOwner"
+    ],
+    "question": "What is LifecycleOwner",
+    "answer": "LifecycleOwner is an interface implemented by the AppCompatActivity and Fragment classes. You can subscribe other components to owner objects which implement this interface, to observe changes to the lifecycle of the owner."
+  },
+  {
+    "id": 101,
+    "level": 2,
+    "langCategory": 0,
+    "hashtags": [
+      "LifecycleAware",
+      "LiveData"
+    ],
+    "question": "What is LiveData",
+    "answer": "LiveData allows you to observe changes to data across multiple components of your app without creating explicit, rigid dependency paths between them. LiveData respects the complex lifecycles of your app components, including activities, fragments, services, or any LifecycleOwner defined in your app. LiveData manages observer subscriptions by pausing subscriptions to stopped LifecycleOwner objects, and cancelling subscriptions to LifecycleOwner objects that are finished."
+  },
+  {
+    "id": 102,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "Oreo",
+      "BehaviorChanges"
+    ],
+    "question": "Android 8.0 Behavior Changes",
+    "answer": "#Background execution limits:- Apps that are running in the background now have limits on how freely they can access background services. #Apps cannot use their manifests to register for most implicit broadcasts (that is, broadcasts that are not targeted specifically at the app). #The startService() method now throws an IllegalStateException if an app targeting Android 8.0 tries to use that method in a situation when it isn't permitted to create background services. The new Context.startForegroundService() method starts a foreground service. The system allows apps to call Context.startForegroundService() even while the app is in the background. However, the app must call that service's startForeground() method within five seconds after the service is created. Android background location limits:- In order to preserve battery, user experience, and system health, background apps receive location updates less frequently when used on a device running Android 8.0. This behavior change affects all apps that receive location updates, including Google Play services. These changes affect the following APIs: #Fused Location Provider (FLP) #Geofencing #GNSS Measurements #Location Manager #Wi-Fi Manager #findViewById() signature change - return <T extends View> T instead of View"
+  },
+  {
+    "id": 103,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "Pie",
+      "BehaviorChanges"
+    ],
+    "question": "Android 9.0 Behavior Changes",
+    "answer": "#Improve Power management: To ensure that system resources are made available to the apps that need them the most. #Limited access to device sensors in background #Restricted access to call logs #Restricted access to phone numbers #Restricted access to Wi-Fi location and connection information #Device security changes #Cryptographic changes #Android secure encrypted files are no longer supported"
+  },
+  {
+    "id": 104,
+    "level": 3,
+    "langCategory": 0,
+    "hashtags": [
+      "Android10",
+      "BehaviorChanges"
+    ],
+    "question": "Android 10 Behavior Changes",
+    "answer": "#Gesture Navigation #KeyChain behavior changes and improvements #android.preference library is deprecated #Battery usage tracking #Dark mode #Background access to device location #Background activity starts #Contacts affinity information #MAC address randomization #Camera metadata #Permissions model"
+  }
+]
